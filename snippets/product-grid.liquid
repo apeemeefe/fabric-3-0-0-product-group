@@ -141,7 +141,9 @@
         const storedLayout = sessionStorage.getItem(`product-grid-view-${currentDevice}`);
 
         if (storedLayout) {
-          const options = document.querySelectorAll(`input[type="radio"][name="grid"]`);
+          const options = document.querySelectorAll(
+            'input[type="radio"][name="grid"], input[type="radio"][name="grid-mobile"]'
+          );
 
           grid.setAttribute('product-grid-view', storedLayout);
 
