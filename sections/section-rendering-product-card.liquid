@@ -40,6 +40,9 @@
     <product-price>
       {% render 'price', product_resource: product, show_unit_price: true %}
     </product-price>
+    {% if product.metafields.custom.product_group.value != blank %}
+      {% render 'product-group-color-selector', product: product, option_name: 'Cor', context: 'card' %}
+    {% endif %}
   </a>
 </product-card>
 {%- if settings.transition_to_main_product -%}
