@@ -51,7 +51,9 @@ export default class VariantPicker extends Component {
 
     this.fetchUpdatedSection(this.buildRequestUrl(selectedOption), loadsNewProduct);
 
-    const url = new URL(window.location.href);
+    const url = loadsNewProduct
+      ? new URL(newUrl, window.location.origin)
+      : new URL(window.location.href);
 
     const variantId = selectedOption.dataset.variantId || null;
 
@@ -61,11 +63,6 @@ export default class VariantPicker extends Component {
       } else {
         url.searchParams.delete('variant');
       }
-    }
-
-    // Change the path if the option is connected to another product via combined listing.
-    if (loadsNewProduct) {
-      url.pathname = newUrl;
     }
 
     if (url.href !== window.location.href) {
