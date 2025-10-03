@@ -2086,6 +2086,42 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   border-radius: var(--variant-picker-swatch-radius);
 }
 
+.product-group-colors {
+  display: flex;
+  gap: var(--padding-sm);
+  align-items: center;
+}
+
+.product-group-colors__option {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-foreground-rgb), 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.product-group-colors__option.is-active {
+  border-color: rgb(var(--color-foreground-rgb));
+  box-shadow: 0 0 0 1px currentColor inset;
+}
+
+.product-group-colors__swatch {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-group-colors__native {
+  display: none;
+}
+
+.product-group-colors--card .product-group-colors__option {
+  width: 28px;
+  height: 28px;
+}
+
 .sticky-content {
   position: sticky;
   top: var(--sticky-header-offset, 0);
