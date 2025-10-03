@@ -8,6 +8,8 @@
 {% assign block_settings = block.settings %}
 
 {% unless product_resource.has_only_default_variant %}
+  {% assign product_group = product_resource.metafields.custom.product_group.value %}
+  {% assign has_color_group = product_group.products != blank %}
   {% liquid
     assign button_background_brightness = section.settings.color_scheme.settings.foreground | color_brightness
     if button_background_brightness < 105
@@ -37,6 +39,11 @@
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
+          assign is_color_option = false
+
+          if has_color_group and product_option.position == 1 and product_option.name == 'Cor'
+            assign is_color_option = true
+          endif
 
           if swatch_count > 0 and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
@@ -53,7 +60,20 @@
           endif
         -%}
 
+        {%- if is_color_option -%}
+          {% render 'product-group-colors',
+            context: 'product',
+            product: product_resource,
+            option_name: product_option.name,
+            product_option: product_option,
+            product_group: product_group
+          %}
+        {%- endif -%}
+
         {%- if variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
+          {%- if is_color_option -%}
+            <div class="product-group-colors__native visually-hidden">
+          {%- endif -%}
           <fieldset
             class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
             {{ option_id_attribute }}
@@ -118,6 +138,9 @@
               {% endstyle %}
             {% endif %}
           </fieldset>
+          {%- if is_color_option -%}
+            </div>
+          {%- endif -%}
         {%- elsif block_settings.variant_style == 'dropdowns' -%}
           {%
             # There is an opportunity to build a custom select component that will allow us to style the select element further (animation for dropdown, swatches shown in the dropdown options, etc)
@@ -133,6 +156,9 @@
             endif
           %}
 
+          {%- if is_color_option -%}
+            <div class="product-group-colors__native visually-hidden">
+          {%- endif -%}
           <div class="variant-option variant-option--dropdowns">
             <label for="Option-{{ block.id }}-{{ forloop.index0 }}">{{ product_option.name | escape }}</label>
             <div
@@ -177,6 +203,9 @@
               </svg>
             </div>
           </div>
+          {%- if is_color_option -%}
+            </div>
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
 
