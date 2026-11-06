@@ -1,0 +1,191 @@
+{%- comment -%}
+  Página "Nomes": lista atores públicos (nome, função, história) e as ações
+  documentadas contrárias ao bem-estar do povo brasileiro, cada uma com fonte.
+  Estrutura: um bloco "Pessoa" seguido de blocos "Ação" (agrupados sob a pessoa anterior).
+{%- endcomment -%}
+
+{%- liquid
+  assign people_count = 0
+  for block in section.blocks
+    if block.type == 'pessoa'
+      assign people_count = people_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="section page-width-content color-{{ section.settings.color_scheme }} spacing-style nomes"
+  style="{% render 'spacing-style', settings: section.settings %}"
+>
+  <header class="nomes__header">
+    {%- if section.settings.titulo != blank -%}
+      <h1 class="nomes__title">{{ section.settings.titulo | escape }}</h1>
+    {%- endif -%}
+    {%- if section.settings.introducao != blank -%}
+      <div class="nomes__intro rte">{{ section.settings.introducao }}</div>
+    {%- endif -%}
+  </header>
+
+  {%- if people_count == 0 -%}
+    <p class="nomes__empty">{{ section.settings.texto_vazio | escape }}</p>
+  {%- else -%}
+    <nav class="nomes__index" aria-label="Índice de nomes">
+      <ul>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'pessoa' and block.settings.nome != blank -%}
+            <li><a href="#pessoa-{{ block.id }}">{{ block.settings.nome | escape }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    {%- assign open = false -%}
+    {%- assign actions_open = false -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'pessoa' -%}
+          {%- if actions_open -%}</ol>{%- assign actions_open = false -%}{%- endif -%}
+          {%- if open -%}</div></article>{%- endif -%}
+          {%- assign open = true -%}
+          <article class="nomes__pessoa" id="pessoa-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div class="nomes__pessoa-head">
+              {%- if block.settings.foto != blank -%}
+                {{ block.settings.foto | image_url: width: 320 | image_tag: class: 'nomes__foto', loading: 'lazy', alt: block.settings.nome }}
+              {%- endif -%}
+              <div>
+                <h2 class="nomes__nome">{{ block.settings.nome | escape }}</h2>
+                {%- if block.settings.funcao != blank -%}
+                  <p class="nomes__funcao">{{ block.settings.funcao | escape }}</p>
+                {%- endif -%}
+                {%- if block.settings.orgao != blank -%}
+                  <p class="nomes__orgao">{{ block.settings.orgao | escape }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="nomes__pessoa-body">
+            {%- if block.settings.historia != blank -%}
+              <h3 class="nomes__subtitle">História</h3>
+              <div class="rte">{{ block.settings.historia }}</div>
+            {%- endif -%}
+            {%- if block.settings.referencia_url != blank -%}
+              <p class="nomes__ref">
+                Referência:
+                <a href="{{ block.settings.referencia_url }}" target="_blank" rel="noopener nofollow">
+                  {{- block.settings.referencia_titulo | default: block.settings.referencia_url | escape -}}
+                </a>
+              </p>
+            {%- endif -%}
+        {%- when 'acao' -%}
+          {%- if open and block.settings.fonte_url != blank or open and request.design_mode -%}
+            {%- unless actions_open -%}
+              <h3 class="nomes__subtitle">Ações contrárias ao bem-estar do povo brasileiro</h3>
+              <ol class="nomes__acoes">
+              {%- assign actions_open = true -%}
+            {%- endunless -%}
+            <li class="nomes__acao" {{ block.shopify_attributes }}>
+              {%- if block.settings.data != blank -%}
+                <span class="nomes__data">{{ block.settings.data | escape }}</span>
+              {%- endif -%}
+              {%- if block.settings.titulo != blank -%}
+                <strong class="nomes__acao-titulo">{{ block.settings.titulo | escape }}</strong>
+              {%- endif -%}
+              {%- if block.settings.descricao != blank -%}
+                <div class="rte">{{ block.settings.descricao }}</div>
+              {%- endif -%}
+              {%- if block.settings.fonte_url != blank -%}
+                <p class="nomes__fonte">
+                  Fonte:
+                  <a href="{{ block.settings.fonte_url }}" target="_blank" rel="noopener nofollow">
+                    {{- block.settings.fonte_titulo | default: block.settings.fonte_url | escape -}}
+                  </a>
+                </p>
+              {%- elsif request.design_mode -%}
+                <p class="nomes__fonte nomes__fonte--missing">Sem fonte — esta ação não será exibida na loja.</p>
+              {%- endif -%}
+            </li>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
+    {%- if actions_open -%}</ol>{%- endif -%}
+    {%- if open -%}</div></article>{%- endif -%}
+  {%- endif -%}
+
+  {%- if section.settings.aviso != blank -%}
+    <footer class="nomes__aviso rte">{{ section.settings.aviso }}</footer>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .nomes { display: flex; flex-direction: column; gap: 2rem; }
+  .nomes__title { margin: 0 0 0.5rem; }
+  .nomes__index ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; list-style: none; padding: 0; margin: 0; }
+  .nomes__pessoa { border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.15); padding-top: 2rem; scroll-margin-top: 6rem; }
+  .nomes__pessoa-head { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 1rem; }
+  .nomes__foto { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; flex-shrink: 0; }
+  .nomes__nome { margin: 0; }
+  .nomes__funcao { margin: 0.25rem 0 0; font-weight: 600; }
+  .nomes__orgao { margin: 0; opacity: 0.75; }
+  .nomes__subtitle { margin: 1.5rem 0 0.5rem; }
+  .nomes__acoes { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+  .nomes__data { display: block; font-size: 0.875em; opacity: 0.7; }
+  .nomes__fonte, .nomes__ref { font-size: 0.875em; margin: 0.25rem 0 0; }
+  .nomes__fonte a, .nomes__ref a { text-decoration: underline; word-break: break-word; }
+  .nomes__fonte--missing { color: #b00020; }
+  .nomes__aviso { font-size: 0.875em; opacity: 0.75; border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.15); padding-top: 1rem; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Nomes",
+  "class": "section-wrapper",
+  "settings": [
+    { "type": "text", "id": "titulo", "label": "Título", "default": "Nomes" },
+    {
+      "type": "richtext",
+      "id": "introducao",
+      "label": "Introdução",
+      "default": "<p>Registro público de agentes cujas ações foram documentadas como contrárias ao bem-estar do povo brasileiro. Toda ação listada é acompanhada da sua fonte.</p>"
+    },
+    { "type": "text", "id": "texto_vazio", "label": "Texto quando não há nomes", "default": "Nenhum nome cadastrado ainda." },
+    {
+      "type": "richtext",
+      "id": "aviso",
+      "label": "Aviso / direito de resposta",
+      "default": "<p>As informações reproduzem fatos publicados nas fontes indicadas. Correções e pedidos de direito de resposta podem ser enviados pelos nossos canais de contato.</p>"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:settings.color_scheme", "default": "scheme-1" },
+    { "type": "header", "content": "t:content.padding" },
+    { "type": "range", "id": "padding-block-start", "label": "t:settings.top", "min": 0, "max": 100, "step": 1, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding-block-end", "label": "t:settings.bottom", "min": 0, "max": 100, "step": 1, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "pessoa",
+      "name": "Pessoa",
+      "settings": [
+        { "type": "text", "id": "nome", "label": "Nome" },
+        { "type": "text", "id": "funcao", "label": "Função / cargo", "info": "Ex.: Desembargadora" },
+        { "type": "text", "id": "orgao", "label": "Órgão", "info": "Ex.: Tribunal de Justiça de ..." },
+        { "type": "image_picker", "id": "foto", "label": "Foto" },
+        { "type": "richtext", "id": "historia", "label": "História" },
+        { "type": "text", "id": "referencia_titulo", "label": "Referência (título)" },
+        { "type": "url", "id": "referencia_url", "label": "Referência (link)", "info": "Ex.: post do Instagram ou matéria que motivou o registro" }
+      ]
+    },
+    {
+      "type": "acao",
+      "name": "Ação (com fonte)",
+      "settings": [
+        { "type": "paragraph", "content": "Fica agrupada sob o bloco Pessoa imediatamente acima. Ações sem link de fonte não são exibidas na loja." },
+        { "type": "text", "id": "data", "label": "Data", "info": "Ex.: 12/03/2025" },
+        { "type": "text", "id": "titulo", "label": "Título da ação" },
+        { "type": "richtext", "id": "descricao", "label": "Descrição" },
+        { "type": "text", "id": "fonte_titulo", "label": "Fonte (título)", "info": "Ex.: Folha de S.Paulo — 12/03/2025" },
+        { "type": "url", "id": "fonte_url", "label": "Fonte (link)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Nomes" }]
+}
+{% endschema %}

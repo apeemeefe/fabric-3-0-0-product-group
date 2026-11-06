@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "nomes",
+      "blocks": {
+        "pessoa_1": {
+          "type": "pessoa",
+          "settings": {
+            "nome": "",
+            "funcao": "Desembargadora",
+            "orgao": "",
+            "historia": "",
+            "referencia_titulo": "Post no Instagram",
+            "referencia_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+          }
+        },
+        "acao_1": {
+          "type": "acao",
+          "settings": { "data": "", "titulo": "", "descricao": "", "fonte_titulo": "", "fonte_url": "" }
+        }
+      },
+      "block_order": ["pessoa_1", "acao_1"],
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
