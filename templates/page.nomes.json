@@ -6,22 +6,66 @@
         "pessoa_1": {
           "type": "pessoa",
           "settings": {
-            "nome": "",
-            "funcao": "Desembargadora",
-            "orgao": "",
-            "historia": "",
-            "referencia_titulo": "Post no Instagram",
-            "referencia_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+            "nome": "Adriana Pileggi de Soveral",
+            "funcao": "Desembargadora federal",
+            "orgao": "Tribunal Regional Federal da 3ª Região (TRF-3)",
+            "historia": "<p>Juíza federal de carreira, atuou na 8ª Vara Federal Criminal de São Paulo. Foi promovida a desembargadora federal do TRF-3 pelo critério de antiguidade em março de 2023 e tomou posse em abril de 2023, passando a integrar a 3ª Turma (Segunda Seção, Direito Público).</p><p>Segundo reportagem do ICL Notícias, acumula histórico de investigações por suspeitas de corrupção, enriquecimento ilícito, irregularidades patrimoniais e abuso de autoridade, já foi afastada das funções judiciais e foi alvo de processos disciplinares. Não há, nas fontes citadas, condenação definitiva.</p>",
+            "referencia_titulo": "TRF-3 — posse de Adriana Pileggi, Renata Lotufo e Giselle França",
+            "referencia_url": "https://web.trf3.jus.br/noticias/Noticiar/ExibirNoticia/422731-adriana-pileggi-renata-lotufo-e-giselle-franca-tomam"
           }
         },
         "acao_1": {
           "type": "acao",
-          "settings": { "data": "", "titulo": "", "descricao": "", "fonte_titulo": "", "fonte_url": "" }
+          "settings": {
+            "data": "",
+            "titulo": "Autorizou a retomada de três casas de apostas proibidas pelo governo federal",
+            "descricao": "<p>Decisão que permitiu a volta das atividades de três empresas de apostas (bets) cuja operação havia sido proibida pelo governo.</p>",
+            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
+            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+          }
+        },
+        "acao_2": {
+          "type": "acao",
+          "settings": {
+            "data": "",
+            "titulo": "Denúncia por suposto favorecimento a Paulo Maluf",
+            "descricao": "<p>Foi denunciada por supostamente beneficiar o ex-prefeito e ex-governador de São Paulo Paulo Maluf.</p>",
+            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
+            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+          }
+        },
+        "acao_3": {
+          "type": "acao",
+          "settings": {
+            "data": "",
+            "titulo": "Processo disciplinar arquivado por prescrição no CNJ",
+            "descricao": "<p>Um dos processos disciplinares foi arquivado pelo Conselho Nacional de Justiça em razão da prescrição, sem julgamento das acusações.</p>",
+            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
+            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+          }
+        },
+        "acao_4": {
+          "type": "acao",
+          "settings": {
+            "data": "Março de 2026",
+            "titulo": "Ação de improbidade administrativa movida pelo MPF",
+            "descricao": "<p>Ação de improbidade administrativa do Ministério Público Federal contra a magistrada chegou à pauta do TRF-3 em março de 2026.</p>",
+            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
+            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+          }
         }
       },
-      "block_order": ["pessoa_1", "acao_1"],
+      "block_order": [
+        "pessoa_1",
+        "acao_1",
+        "acao_2",
+        "acao_3",
+        "acao_4"
+      ],
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
