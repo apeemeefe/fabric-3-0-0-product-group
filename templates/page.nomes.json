@@ -8,59 +8,158 @@
           "settings": {
             "nome": "Adriana Pileggi de Soveral",
             "funcao": "Desembargadora federal",
-            "orgao": "Tribunal Regional Federal da 3ª Região (TRF-3)",
-            "historia": "<p>Juíza federal de carreira, atuou na 8ª Vara Federal Criminal de São Paulo. Foi promovida a desembargadora federal do TRF-3 pelo critério de antiguidade em março de 2023 e tomou posse em abril de 2023, passando a integrar a 3ª Turma (Segunda Seção, Direito Público).</p><p>Segundo reportagem do ICL Notícias, acumula histórico de investigações por suspeitas de corrupção, enriquecimento ilícito, irregularidades patrimoniais e abuso de autoridade, já foi afastada das funções judiciais e foi alvo de processos disciplinares. Não há, nas fontes citadas, condenação definitiva.</p>",
-            "referencia_titulo": "TRF-3 — posse de Adriana Pileggi, Renata Lotufo e Giselle França",
-            "referencia_url": "https://web.trf3.jus.br/noticias/Noticiar/ExibirNoticia/422731-adriana-pileggi-renata-lotufo-e-giselle-franca-tomam"
+            "orgao": "Tribunal Regional Federal da 3ª Região (TRF-3) — 3ª Turma",
+            "historia": "<p>Juíza federal de carreira, foi titular da 8ª Vara Federal Criminal de São Paulo. Em 2003, seu nome apareceu nas escutas da Operação Anaconda; nos anos seguintes foi denunciada pelo MPF, afastada das funções pelo Órgão Especial do TRF-3 e alvo de processos disciplinares — parte deles encerrada por prescrição ou anulada em instâncias superiores, sem condenação definitiva.</p><p>Promovida a desembargadora federal do TRF-3 por antiguidade em 2023, integra a 3ª Turma. Em novembro de 2026 concedeu liminar que liberou três casas de apostas proibidas pelo governo federal.</p>",
+            "referencia_titulo": "ICL Notícias — Desembargadora que liberou bets acumula histórico de investigações e processos disciplinares (Cleber Lourenço)",
+            "referencia_url": "https://iclnoticias.com.br/desembargadora-que-liberou-bets-acumula-historico-de-investigacoes-e-processos-disciplinares/"
           }
         },
         "acao_1": {
           "type": "acao",
           "settings": {
+            "data": "03/11/2026",
+            "titulo": "Liberou três casas de apostas proibidas pelo governo federal",
+            "descricao": "<p>Concedeu liminar à CDA Gaming restabelecendo a autorização das marcas Casa de Apostas, Betsul e Jogo Online, proibidas com base na MP nº 1.394/2026, e classificou a medida do governo como “verdadeiro confisco”. A AGU anunciou recurso.</p>",
+            "fonte_titulo": "CNN Brasil — Justiça autoriza retorno de três bets após proibição do governo Lula",
+            "fonte_url": "https://www.cnnbrasil.com.br/politica/justica-autoriza-retorno-de-tres-bets-apos-proibicao-do-governo-lula/"
+          }
+        },
+        "acao_1b": {
+          "type": "acao",
+          "settings": {
             "data": "",
-            "titulo": "Autorizou a retomada de três casas de apostas proibidas pelo governo federal",
-            "descricao": "<p>Decisão que permitiu a volta das atividades de três empresas de apostas (bets) cuja operação havia sido proibida pelo governo.</p>",
-            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
-            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+            "titulo": "Repercussão: AGU recorre da decisão",
+            "descricao": "<p>Cobertura da decisão e do anúncio de recurso pela Advocacia-Geral da União.</p>",
+            "fonte_titulo": "SBT News — Justiça libera volta de 3 bets; AGU diz que irá recorrer",
+            "fonte_url": "https://sbtnews.sbt.com.br/noticia/brasil/juiza-libera-volta-de-3-bets-em-sp-agu-diz-que-ira-recorrer"
+          }
+        },
+        "acao_1c": {
+          "type": "acao",
+          "settings": {
+            "data": "",
+            "titulo": "Fundamento da decisão: “verdadeiro confisco”",
+            "descricao": "<p>Detalhes da liminar e dos argumentos usados pela magistrada.</p>",
+            "fonte_titulo": "Money Times — 'Verdadeiro confisco', diz decisão de juíza em SP que liberou 3 bets",
+            "fonte_url": "https://www.moneytimes.com.br/verdadeiro-confisco-diz-decisao-de-juiza-em-sp-que-liberou-3-bets-entenda-o-que-aconteceu/"
           }
         },
         "acao_2": {
           "type": "acao",
           "settings": {
-            "data": "",
-            "titulo": "Denúncia por suposto favorecimento a Paulo Maluf",
-            "descricao": "<p>Foi denunciada por supostamente beneficiar o ex-prefeito e ex-governador de São Paulo Paulo Maluf.</p>",
-            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
-            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+            "data": "2003",
+            "titulo": "Investigada no STF por suposta adulteração de placa de veículo",
+            "descricao": "<p>A 2ª Turma do STF negou habeas corpus e manteve o inquérito que apurava o uso de placa adulterada em veículo da juíza.</p>",
+            "fonte_titulo": "STF — 2ª Turma nega HC a juíza federal investigada por suposta adulteração de placa de veículo",
+            "fonte_url": "https://noticias.stf.jus.br/postsnoticias/2a-turma-nega-hc-a-juiza-federal-investigada-por-suposta-adulteracao-de-placa-de-veiculo/"
           }
         },
         "acao_3": {
           "type": "acao",
           "settings": {
-            "data": "",
-            "titulo": "Processo disciplinar arquivado por prescrição no CNJ",
-            "descricao": "<p>Um dos processos disciplinares foi arquivado pelo Conselho Nacional de Justiça em razão da prescrição, sem julgamento das acusações.</p>",
-            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
-            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+            "data": "2004",
+            "titulo": "Afastada por uso de placas reservadas da Polícia Federal",
+            "descricao": "<p>Denunciada pelo MPF por usar placas reservadas da Polícia Federal em carros particulares e de familiares; o Órgão Especial do TRF-3 decidiu afastá-la por 12 votos a 3. O STF depois entendeu tratar-se de irregularidade administrativa, não crime.</p>",
+            "fonte_titulo": "Consultor Jurídico — Juíza é afastada por usar placas frias da Polícia Federal",
+            "fonte_url": "https://www.conjur.com.br/2004-jun-24/juiza_afastada_usar_placas_frias_policia_federal/"
           }
         },
         "acao_4": {
           "type": "acao",
           "settings": {
+            "data": "2005–2006",
+            "titulo": "Denunciada por corrupção passiva por suposto favorecimento a Paulo Maluf",
+            "descricao": "<p>No âmbito da Operação Anaconda, o MPF a acusou de corrupção por supostamente beneficiar o ex-governador Paulo Maluf; ela foi afastada. Em 2006 a 5ª Turma do STJ anulou o recebimento da denúncia.</p>",
+            "fonte_titulo": "Consultor Jurídico — STJ anula recebimento de denúncia contra a juíza Adriana Soveral",
+            "fonte_url": "https://conjur.com.br/2006-out-24/stj_anula_recebimento_denuncia_juiza_adriana_soveral/"
+          }
+        },
+        "acao_5": {
+          "type": "acao",
+          "settings": {
+            "data": "2009",
+            "titulo": "Investigada pelo MPF por suposta sonegação e compra de imóvel",
+            "descricao": "<p>O MPF apurou suposta sonegação fiscal ligada à compra de um imóvel em 2003.</p>",
+            "fonte_titulo": "Sedep / Conjur — Sem sossego: juíza acusada de sonegação é investigada pelo MPF",
+            "fonte_url": "https://www.sedep.com.br/noticias/sem-sossego-juza-acusada-de-sonegao-investigada-pelo-mpf/"
+          }
+        },
+        "acao_5b": {
+          "type": "acao",
+          "settings": {
+            "data": "2009",
+            "titulo": "Defesa sustenta que juíza não pode ser denunciada",
+            "descricao": "<p>Posição da defesa sobre a acusação do MPF.</p>",
+            "fonte_titulo": "Consultor Jurídico — Juíza acusada pelo MPF não pode ser denunciada, segundo advogado",
+            "fonte_url": "https://conjur.com.br/2009-fev-09/juiza-acusada-mpf-nao-denunciada-segundo-advogado/"
+          }
+        },
+        "acao_6": {
+          "type": "acao",
+          "settings": {
+            "data": "2015",
+            "titulo": "Processo no CNJ por omissão de rendimentos arquivado por prescrição",
+            "descricao": "<p>O CNJ arquivou o processo administrativo sobre suposta omissão de rendimentos nas declarações de 2003 e 2004 por prescrição, sem julgar o mérito.</p>",
+            "fonte_titulo": "CNJ — CNJ reconhece prescrição de processo contra magistrada do TRF da 3ª Região",
+            "fonte_url": "https://www.cnj.jus.br/cnj-reconhece-prescricao-de-processo-contra-magistrada-do-trf-da-3-regiao/"
+          }
+        },
+        "acao_7": {
+          "type": "acao",
+          "settings": {
+            "data": "",
+            "titulo": "Denunciada por abuso de autoridade",
+            "descricao": "<p>Reportagem sobre denúncia por abuso contra a juíza.</p>",
+            "fonte_titulo": "Diário de Cuiabá — Juíza é denunciada por abuso",
+            "fonte_url": "https://www.diariodecuiaba.com.br/brasil/juiza-e-denunciada-por-abuso/163725"
+          }
+        },
+        "acao_8": {
+          "type": "acao",
+          "settings": {
             "data": "Março de 2026",
             "titulo": "Ação de improbidade administrativa movida pelo MPF",
-            "descricao": "<p>Ação de improbidade administrativa do Ministério Público Federal contra a magistrada chegou à pauta do TRF-3 em março de 2026.</p>",
-            "fonte_titulo": "ICL Notícias — reportagem de Cleber Lourenço (Instagram)",
-            "fonte_url": "https://www.instagram.com/p/DfaEZTGF7fX/"
+            "descricao": "<p>Ação de improbidade do MPF contra a magistrada chegou à pauta do TRF-3 em março de 2026.</p>",
+            "fonte_titulo": "ICL Notícias — Cleber Lourenço",
+            "fonte_url": "https://iclnoticias.com.br/desembargadora-que-liberou-bets-acumula-historico-de-investigacoes-e-processos-disciplinares/"
+          }
+        },
+        "acao_9": {
+          "type": "acao",
+          "settings": {
+            "data": "",
+            "titulo": "Panorama: histórico de investigações",
+            "descricao": "<p>Reportagens que reúnem o histórico de investigações após a decisão sobre as bets.</p>",
+            "fonte_titulo": "Metro 1 — Desembargadora que liberou bets já foi investigada por corrupção e enriquecimento ilícito",
+            "fonte_url": "https://www.metro1.com.br/noticias/politica/191055,desembargadora-que-liberou-bets-ja-foi-investigada-por-corrupcao-e-enriquecimento-ilicito"
+          }
+        },
+        "acao_10": {
+          "type": "acao",
+          "settings": {
+            "data": "06/11/2026",
+            "titulo": "Perfil: quem é Adriana Pileggi",
+            "descricao": "<p>Perfil da magistrada e da decisão sobre as bets.</p>",
+            "fonte_titulo": "NC News — Quem é Adriana Pileggi, a desembargadora que liberou três bets",
+            "fonte_url": "https://ncnews.com.br/2026/11/06/quem-e-adriana-pileggi-liberou-bets/"
           }
         }
       },
       "block_order": [
         "pessoa_1",
         "acao_1",
+        "acao_1b",
+        "acao_1c",
         "acao_2",
         "acao_3",
-        "acao_4"
+        "acao_4",
+        "acao_5",
+        "acao_5b",
+        "acao_6",
+        "acao_7",
+        "acao_8",
+        "acao_9",
+        "acao_10"
       ],
       "settings": {}
     }
